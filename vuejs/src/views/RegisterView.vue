@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     register(){
-      router.push('/home')
+      router.push('/login')
     }
   }
 };

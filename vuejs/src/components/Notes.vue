@@ -1,7 +1,7 @@
 <template>
  <div class="tc-notes-wrapper">
     <add-new-button @addNote="addNote"/>
-   <div class="tc-notes">
+   <div v-if="notes.length !== 0" class="tc-notes">
      <note
          v-for="(note, index) in notes"
          :key="index"
@@ -9,6 +9,9 @@
          @deleteNote="deleteNote"
          @noteUpdated="noteUpdated"
      />
+   </div>
+   <div class="tc-notes" v-else>
+     <h3>Notes is empty. Try to add first.</h3>
    </div>
  </div>
 </template>
